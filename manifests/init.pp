@@ -39,14 +39,14 @@
 # * `checksum_type`
 # Type of checksum used to verify the binary being installed. Default: 'sha256'
 #
-# * `configuration_directory`
-# Directory holding Minio configuration file. Default: '/etc/minio'
-#
 # * `installation_directory`
 # Target directory to hold the minio installation. Default: '/opt/minio'
 #
 # * `storage_root`
 # Directory where minio will keep all data. Default: '/var/minio'
+#
+# * `log_directory`
+# Log directory for minio. Default: '/var/log/minio'
 #
 # * `listen_ip`
 # IP address on which Minio should listen to requests.
@@ -54,17 +54,20 @@
 # * `listen_port`
 # Port on which Minio should listen to requests.
 #
-# * `configuration`
-# Hash style settings for configuring Minio.
-#
 # * `manage_service`
 # Should we manage a service definition for Minio?
 #
 # * `service_template`
 # Path to service template file.
 #
+# * `service_path`
+# Where to create the service definition.
+#
 # * `service_provider`
 # Which service provider do we use?
+#
+# * `service_mode`
+# File mode for the created service definition.
 #
 # Examples
 # --------
@@ -97,18 +100,28 @@ class minio (
   String $version,
   String $checksum,
   String $checksum_type,
-  String $configuration_directory,
+
+  String $mc_base_url,
+  String $mc_version,
+  String $mc_checksum,
+  String $mc_checksum_type,
+
   String $installation_directory,
   String $storage_root,
+  String $log_directory,
   String $listen_ip,
   Integer $listen_port,
 
-  Hash $configuration,
-
   Boolean $manage_service,
   String $service_template,
+  String $service_path,
   String $service_provider,
-  ) {
+  String $service_mode,
+
+  String $root_user,
+  String $root_password,
+
+) {
 
   class { '::minio::user': }
   class { '::minio::install': }

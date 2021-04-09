@@ -5,17 +5,27 @@ minio::manage_group: true
 minio::manage_home: true
 minio::owner: 'minio'
 minio::group: 'minio'
-minio::home: '/etc/minio'
+minio::home: ~
 minio::base_url: 'https://dl.minio.io/server/minio/release'
-minio::version: 'RELEASE.2020-10-03T02-19-42Z'
-minio::checksum: 'd8164b0446c79fc80f5d3a06971fa87fa0ede519c6d253f260fbfba7aa834a0b'
+minio::version: 'RELEASE.2021-04-06T23-11-00Z'
+minio::checksum: '59bb77de22ec686c303256ad5362e8958844baef1871b8b5c58ed11297ace008'
 minio::checksum_type: 'sha256'
-minio::configuration_directory: '/etc/minio'
 minio::installation_directory: '/opt/minio'
 minio::storage_root: '/var/minio'
-minio::configuration: {}
+minio::log_directory: '/var/log/minio'
+
 minio::listen_ip: 127.0.0.1
 minio::listen_port: 9000
 minio::manage_service: true
 minio::service_template: 'minio/systemd.erb'
+minio::service_path: '/lib/systemd/system/minio.service'
 minio::service_provider: 'systemd'
+minio::service_mode: '0644'
+
+minio::root_user: minio
+minio::root_password: miniopassword
+
+minio::mc_base_url: 'https://dl.min.io/client/mc/release'
+minio::mc_version: 'RELEASE.2021-03-23T05-46-11Z'
+minio::mc_checksum: '088efeb053cdb06f8450533452ad0fae859758134a953cb353072236d2abb4ee'
+minio::mc_checksum_type: 'sha256'

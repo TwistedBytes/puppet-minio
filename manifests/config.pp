@@ -24,6 +24,9 @@
 # * `storage_root`
 # Directory where minio will keep all data. Default: '/var/minio'
 #
+# * `log_directory`
+# Log directory for minio. Default: '/var/log/minio'
+#
 # Authors
 # -------
 #
@@ -35,27 +38,32 @@
 # Copyright 2017 Daniel S. Reichenbach <https://kogitoapp.com>
 #
 class minio::config (
-  $configuration           = $minio::configuration,
-  $owner                   = $minio::owner,
-  $group                   = $minio::group,
-  $configuration_directory = $minio::configuration_directory,
-  $installation_directory  = $minio::installation_directory,
-  $storage_root            = $minio::storage_root,
-  ) {
+  String $listen_ip            = $minio::listen_ip,
+  Integer $listen_port         = $minio::listen_port,
 
-  $default_configuration = {
-    'MINIO_ACCESS_KEY'  => 'admin',
-    'MINIO_SECRET_KEY'  => 'password',
-    'MINIO_REGION_NAME' => 'us-east-1',
+  String $root_user            = $minio::root_user,
+  String $root_password        = $minio::root_password,
+
+  Boolean $root_config_enable  = false,
+  Boolean $root_config_replace = false,
+) {
+
+  file { "/etc/default/minio":
+    content => template('minio/systemd_env.erb'),
+    mode    => '0600',
   }
 
-  $resulting_configuration = deep_merge($default_configuration, $configuration)
+  if $root_config_enable {
+    file { "/root/.mc":
+      ensure => 'directory',
+      mode   => "0700",
+    }
 
-  file { "${configuration_directory}/config":
-    content => template('minio/config.erb'),
-    owner   => $owner,
-    group   => $group,
-    mode    => '0644',
-    notify  => Service['minio']
+    file { "/root/.mc/config.json":
+      content => template('minio/config.json.erb'),
+      mode    => '0600',
+      replace => $root_config_replace,
+    }
   }
+
 }

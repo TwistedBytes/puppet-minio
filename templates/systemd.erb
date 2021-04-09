@@ -14,7 +14,7 @@ Group=<%= @group %>
 
 PermissionsStartOnly=true
 
-EnvironmentFile=<%= @configuration_directory %>/config
+EnvironmentFile=/etc/default/minio
 ExecStart=<%= @installation_directory %>/minio server --address <%= @listen_ip %>:<%= @listen_port %> <%= @storage_root %>
 
 StandardOutput=journal

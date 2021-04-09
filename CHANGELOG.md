@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## Release X.X.X (2021-04-08)
+
+
+
+- Upgrade default Minio installation to a more recent version
+- disable /etc/minio config
+- add mc installation
+- Use Systemd EnvironmentFile for config or root user/pass
+
 ## Release 1.1.0 (2017-11-15)
 
 With this release, ownership of this module is transfered to Kogito UG,
