@@ -39,7 +39,7 @@ class minio::client::install(
 ) {
   $kernel_down = downcase($::kernel)
 
-  case $::architecture {
+  case $facts['os']['architecture'] {
     /(x86_64)/: {
       $arch = 'amd64'
     }
@@ -47,7 +47,7 @@ class minio::client::install(
       fail('Minio client does not support x86 architecture')
     }
     default: {
-      $arch = $::architecture
+      $arch = $facts['os']['architecture']
     }
   }
 

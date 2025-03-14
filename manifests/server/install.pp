@@ -122,7 +122,7 @@ class minio::server::install (
   if ($package_ensure) {
     $kernel_down=downcase($::kernel)
 
-    case $::architecture {
+    case $facts['os']['architecture'] {
       /(x86_64)/: {
         $arch = 'amd64'
       }
@@ -130,7 +130,7 @@ class minio::server::install (
         $arch = '386'
       }
       default: {
-        $arch = $::architecture
+        $arch = $facts['os']['architecture']
       }
     }
 
