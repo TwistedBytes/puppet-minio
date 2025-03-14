@@ -24,18 +24,18 @@
 # @author Daniel S. Reichenbach <daniel@kogitoapp.com>
 # @author Evgeny Soynov <esoynov@kogito.network>
 #
-class minio::client::config(
+class minio::client::config (
   Hash $aliases                                         = $minio::client::aliases,
   Boolean $purge_unmanaged_aliases                      = $minio::client::purge_unmanaged_aliases,
 ) {
   if ($purge_unmanaged_aliases) {
-    resources {'minio_client_alias':
+    resources { 'minio_client_alias':
       purge => true,
     }
   }
 
   $aliases.each | $alias, $alias_values | {
-    minio_client_alias {$alias:
+    minio_client_alias { $alias:
       * => $alias_values,
     }
   }

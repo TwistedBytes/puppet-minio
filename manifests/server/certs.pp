@@ -43,7 +43,7 @@
 #   module for parameter descriptions. **Important**: if you use additional certificates,
 #   their corresponding SAN names should be filled for SNI to work.
 #
-class minio::server::certs(
+class minio::server::certs (
   Enum['present', 'absent'] $cert_ensure = $minio::server::cert_ensure,
   String $owner = $minio::server::owner,
   String $group = $minio::server::group,
@@ -69,7 +69,7 @@ class minio::server::certs(
       *         => $default_cert_configuration,
     }
 
-    -> file {"${cert_directory}/private.key":
+    -> file { "${cert_directory}/private.key":
       ensure => $link_ensure,
       target => "${cert_directory}/${default_site_name}.key",
       mode   => '0600',
@@ -77,7 +77,7 @@ class minio::server::certs(
       group  => $group,
     }
 
-    -> file {"${cert_directory}/public.crt":
+    -> file { "${cert_directory}/public.crt":
       ensure => $link_ensure,
       target => "${cert_directory}/${default_site_name}.pem",
       mode   => '0600',
@@ -87,7 +87,7 @@ class minio::server::certs(
   }
 
   $additional_certs.each | $name, $cert_values | {
-    certs::site {$name:
+    certs::site { $name:
       ensure    => $cert_ensure,
       cert_path => "${cert_directory}/${name}",
       key_path  => "${cert_directory}/${name}",
@@ -95,14 +95,14 @@ class minio::server::certs(
       group     => $group,
       *         => $cert_values,
     }
-    -> file {"${cert_directory}/${name}/private.key":
+    -> file { "${cert_directory}/${name}/private.key":
       ensure => $link_ensure,
       target => "${cert_directory}/${name}/${name}.key",
       mode   => '0600',
       owner  => $owner,
       group  => $group,
     }
-    -> file {"${cert_directory}/${name}/public.crt":
+    -> file { "${cert_directory}/${name}/public.crt":
       ensure => $link_ensure,
       target => "${cert_directory}/${name}/${name}.pem",
       mode   => '0600',

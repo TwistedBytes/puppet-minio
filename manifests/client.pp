@@ -42,11 +42,13 @@
 #   List of aliases to add to the minio client configuration. For parameter description see `minio_client_alias`.
 # @param [Boolean] purge_unmanaged_aliases
 #   Decides if puppet should purge unmanaged minio client aliases
+# @param binary_name [String]
+#   The name of the minio binary
 #
 # @author Daniel S. Reichenbach <daniel@kogitoapp.com>
 # @author Evgeny Soynov <esoynov@kogito.network>
 #
-class minio::client(
+class minio::client (
   Boolean $manage_client_installation                   = $minio::manage_client_installation,
   Enum['present', 'absent'] $package_ensure             = $minio::client_package_ensure,
   Stdlib::HTTPUrl $base_url                             = $minio::client_base_url,
@@ -59,8 +61,8 @@ class minio::client(
   Boolean $purge_unmanaged_aliases                      = $minio::purge_unmanaged_client_aliases,
 ) {
   if ($manage_client_installation) {
-    include ::minio::client::install
-    include ::minio::client::config
+    include minio::client::install
+    include minio::client::config
 
     Class['minio::client::install'] -> Class['minio::client::config']
   }

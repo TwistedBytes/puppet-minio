@@ -39,8 +39,7 @@ class minio::server::user (
   String                                  $owner                       = $minio::server::owner,
   String                                  $group                       = $minio::server::group,
   Optional[Stdlib::Absolutepath]          $home                        = $minio::server::home,
-  ) {
-
+) {
   if ($manage_home) {
     if $home == undef {
       $homedir = "/home/${owner}"

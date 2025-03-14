@@ -184,10 +184,9 @@ class minio (
   Optional[Hash] $default_cert_configuration,
   Optional[Hash] $additional_certs,
   Optional[Stdlib::Absolutepath] $custom_configuration_file_path
-  ) {
-
-  include ::minio::server
-  include ::minio::client
+) {
+  include minio::server
+  include minio::client
 
   Class['minio::server'] -> Class['minio::client']
 }

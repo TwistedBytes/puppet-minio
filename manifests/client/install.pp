@@ -24,11 +24,13 @@
 #   Type of checksum used to verify the client binary being installed. Default: `sha256`
 # @param [Stdlib::Absolutepath] installation_directory
 #   Target directory to hold the minio client installation. Default: `/opt/minioclient`
+# @param binary_name [String]
+#   The name of the minio binary
 #
 # @author Daniel S. Reichenbach <daniel@kogitoapp.com>
 # @author Evgeny Soynov <esoynov@kogito.network>
 #
-class minio::client::install(
+class minio::client::install (
   Enum['present', 'absent'] $package_ensure             = $minio::client::package_ensure,
   Stdlib::HTTPUrl $base_url                             = $minio::client::base_url,
   String $version                                       = $minio::client::version,
@@ -37,7 +39,7 @@ class minio::client::install(
   Stdlib::Absolutepath $installation_directory          = $minio::client::installation_directory,
   String $binary_name                                   = $minio::client::binary_name,
 ) {
-  $kernel_down = downcase($::kernel)
+  $kernel_down = downcase($facts['kernel'])
 
   case $facts['os']['architecture'] {
     /(x86_64)/: {

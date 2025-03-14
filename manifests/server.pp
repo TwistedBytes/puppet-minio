@@ -57,8 +57,6 @@
 #   The user owning minio and its' files. Default: 'minio'
 # @param [String] group
 #   The group owning minio and its' files. Default: 'minio'
-# @param [Stdlib::HTTPUrl] base_url
-#   Download base URL for the server. Can be used for local mirrors.
 # @param [Optional[Stdlib::Absolutepath]] home
 #   Qualified path to the users' home directory. Default: empty
 # @param [Stdlib::HTTPUrl] base_url
@@ -150,11 +148,11 @@ class minio::server (
   Optional[Stdlib::Absolutepath] $custom_configuration_file_path = $minio::custom_configuration_file_path,
 ) {
   if ($manage_server_installation) {
-    include ::minio::server::user
-    include ::minio::server::install
-    include ::minio::server::config
-    include ::minio::server::certs
-    include ::minio::server::service
+    include minio::server::user
+    include minio::server::install
+    include minio::server::config
+    include minio::server::certs
+    include minio::server::service
 
     Class['minio::server::user']
     -> Class['minio::server::install']

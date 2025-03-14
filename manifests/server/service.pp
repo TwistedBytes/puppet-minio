@@ -27,8 +27,7 @@ class minio::server::service (
   Boolean                 $manage_service   = $minio::server::manage_service,
   Stdlib::Ensure::Service $service_ensure   = $minio::server::service_ensure,
   String                  $service_provider = $minio::server::service_provider,
-  ) {
-
+) {
   if ($manage_service) {
     service { 'minio':
       ensure     => $service_ensure,

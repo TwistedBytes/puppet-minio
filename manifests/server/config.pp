@@ -47,8 +47,7 @@ class minio::server::config (
   Stdlib::Absolutepath $installation_directory = $minio::server::installation_directory,
   Variant[Stdlib::Absolutepath, Array[Stdlib::Absolutepath]] $storage_root = $minio::server::storage_root,
   Optional[Stdlib::Absolutepath] $custom_configuration_file_path = $minio::server::custom_configuration_file_path,
-  ) {
-
+) {
   $storage = [$storage_root].flatten()
   if (
     $storage.length() > 1
