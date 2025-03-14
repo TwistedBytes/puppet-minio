@@ -50,7 +50,10 @@ class minio::server::config (
   ) {
 
   $storage = [$storage_root].flatten()
-  if ($storage.length() > 1 and !has_key($configuration, 'MINIO_DEPLOYMENT_DEFINITION')) {
+  if (
+    $storage.length() > 1
+    and !('MINIO_DEPLOYMENT_DEFINITION' in $configuration)
+  ) {
     fail('Please provide a value for the MINIO_DEPLOYMENT_DEFINITION in configuration to run distributed or erasure-coded deployment.')
   }
 
