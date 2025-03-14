@@ -1,7 +1,14 @@
 ---
-puppet5:
+puppet7:
   provisioner: docker
-  images: ['litmusimage/centos:7','litmusimage/centos:8','litmusimage/debian:9','litmusimage/debian:10','litmusimage/ubuntu:18.04']
-puppet6:
+   - litmusimage/centos:9
+   - litmusimage/debian:12
+   - litmusimage/debian:10
+   - litmusimage/ubuntu:24.04
+puppet8:
   provisioner: docker
-  images: ['litmusimage/centos:7','litmusimage/centos:8','litmusimage/debian:9','litmusimage/debian:10','litmusimage/ubuntu:18.04','litmusimage/ubuntu:20.04']
+  images:
+   - 'litmusimage/centos:8'
+   - 'litmusimage/debian:12'
+   - 'litmusimage/debian:10'
+   - 'litmusimage/ubuntu:24.04'
