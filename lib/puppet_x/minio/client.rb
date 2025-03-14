@@ -3,7 +3,7 @@
 require 'json'
 
 module PuppetX # rubocop:disable Style/ClassAndModuleChildren
-  module Minio # rubocop:disable Style/ClassAndModuleChildren
+  module Minio
     class Client # rubocop:disable Style/Documentation
       CLIENT_LINK_LOCATION = '/root/.minioclient'
 
