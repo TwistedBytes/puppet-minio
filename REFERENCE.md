@@ -7,15 +7,15 @@
 ### Classes
 
 * [`minio`](#minio): Manages a Minio installation on various Linux/BSD operating systems.
-* [`minio::client`](#minioclient): Manages a Minio client (mc) on various Linux/BSD operating systems.
-* [`minio::client::config`](#minioclientconfig): Manages a Minio client (mc) configuration various Linux/BSD operating systems.
-* [`minio::client::install`](#minioclientinstall): Manages a Minio client (mc) installation various Linux/BSD operating systems.
-* [`minio::server`](#minioserver): Manages a Minio server installation on various Linux/BSD operating systems.
-* [`minio::server::certs`](#minioservercerts): Manages minio certificate deployment.
-* [`minio::server::config`](#minioserverconfig): Applies configuration for `::minio::server` class to system.
-* [`minio::server::install`](#minioserverinstall): Installs minio server and required service definitions.
-* [`minio::server::service`](#minioserverservice): Manages services for the `::minio::server` class.
-* [`minio::server::user`](#minioserveruser): Manages user for the minio server installations.
+* [`minio::client`](#minio--client): Manages a Minio client (mc) on various Linux/BSD operating systems.
+* [`minio::client::config`](#minio--client--config): Manages a Minio client (mc) configuration various Linux/BSD operating systems.
+* [`minio::client::install`](#minio--client--install): Manages a Minio client (mc) installation various Linux/BSD operating systems.
+* [`minio::server`](#minio--server): Manages a Minio server installation on various Linux/BSD operating systems.
+* [`minio::server::certs`](#minio--server--certs): Manages minio certificate deployment.
+* [`minio::server::config`](#minio--server--config): Applies configuration for `::minio::server` class to system.
+* [`minio::server::install`](#minio--server--install): Installs minio server and required service definitions.
+* [`minio::server::service`](#minio--server--service): Manages services for the `::minio::server` class.
+* [`minio::server::user`](#minio--server--user): Manages user for the minio server installations.
 
 ### Resource types
 
@@ -88,264 +88,264 @@ class { 'minio':
 
 The following parameters are available in the `minio` class:
 
-* [`package_ensure`](#package_ensure)
-* [`manage_user`](#manage_user)
-* [`manage_group`](#manage_group)
-* [`manage_home`](#manage_home)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`home`](#home)
-* [`base_url`](#base_url)
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`configuration_directory`](#configuration_directory)
-* [`installation_directory`](#installation_directory)
-* [`storage_root`](#storage_root)
-* [`listen_ip`](#listen_ip)
-* [`listen_port`](#listen_port)
-* [`configuration`](#configuration)
-* [`manage_service`](#manage_service)
-* [`service_ensure`](#service_ensure)
-* [`service_template`](#service_template)
-* [`service_provider`](#service_provider)
-* [`manage_server_installation`](#manage_server_installation)
-* [`manage_client_installation`](#manage_client_installation)
-* [`client_package_ensure`](#client_package_ensure)
-* [`client_base_url`](#client_base_url)
-* [`client_version`](#client_version)
-* [`client_checksum`](#client_checksum)
-* [`client_checksum_type`](#client_checksum_type)
-* [`client_installation_directory`](#client_installation_directory)
-* [`client_binary_name`](#client_binary_name)
-* [`client_aliases`](#client_aliases)
-* [`purge_unmanaged_client_aliases`](#purge_unmanaged_client_aliases)
-* [`cert_ensure`](#cert_ensure)
-* [`cert_directory`](#cert_directory)
-* [`default_cert_name`](#default_cert_name)
-* [`default_cert_configuration`](#default_cert_configuration)
-* [`additional_certs`](#additional_certs)
-* [`custom_configuration_file_path`](#custom_configuration_file_path)
+* [`package_ensure`](#-minio--package_ensure)
+* [`manage_user`](#-minio--manage_user)
+* [`manage_group`](#-minio--manage_group)
+* [`manage_home`](#-minio--manage_home)
+* [`owner`](#-minio--owner)
+* [`group`](#-minio--group)
+* [`home`](#-minio--home)
+* [`base_url`](#-minio--base_url)
+* [`version`](#-minio--version)
+* [`checksum`](#-minio--checksum)
+* [`checksum_type`](#-minio--checksum_type)
+* [`configuration_directory`](#-minio--configuration_directory)
+* [`installation_directory`](#-minio--installation_directory)
+* [`storage_root`](#-minio--storage_root)
+* [`listen_ip`](#-minio--listen_ip)
+* [`listen_port`](#-minio--listen_port)
+* [`configuration`](#-minio--configuration)
+* [`manage_service`](#-minio--manage_service)
+* [`service_ensure`](#-minio--service_ensure)
+* [`service_template`](#-minio--service_template)
+* [`service_provider`](#-minio--service_provider)
+* [`manage_server_installation`](#-minio--manage_server_installation)
+* [`manage_client_installation`](#-minio--manage_client_installation)
+* [`client_package_ensure`](#-minio--client_package_ensure)
+* [`client_base_url`](#-minio--client_base_url)
+* [`client_version`](#-minio--client_version)
+* [`client_checksum`](#-minio--client_checksum)
+* [`client_checksum_type`](#-minio--client_checksum_type)
+* [`client_installation_directory`](#-minio--client_installation_directory)
+* [`client_binary_name`](#-minio--client_binary_name)
+* [`client_aliases`](#-minio--client_aliases)
+* [`purge_unmanaged_client_aliases`](#-minio--purge_unmanaged_client_aliases)
+* [`cert_ensure`](#-minio--cert_ensure)
+* [`cert_directory`](#-minio--cert_directory)
+* [`default_cert_name`](#-minio--default_cert_name)
+* [`default_cert_configuration`](#-minio--default_cert_configuration)
+* [`additional_certs`](#-minio--additional_certs)
+* [`custom_configuration_file_path`](#-minio--custom_configuration_file_path)
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-minio--package_ensure"></a>`package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
 Decides if the `minio` binary will be installed. Default: `present`
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-minio--manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
 Should we manage provisioning the user? Default: `true`
 
-##### <a name="manage_group"></a>`manage_group`
+##### <a name="-minio--manage_group"></a>`manage_group`
 
 Data type: `Boolean`
 
 Should we manage provisioning the group? Default: `true`
 
-##### <a name="manage_home"></a>`manage_home`
+##### <a name="-minio--manage_home"></a>`manage_home`
 
 Data type: `Boolean`
 
 Should we manage provisioning the home directory? Default: `true`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--owner"></a>`owner`
 
 Data type: `String`
 
 The user owning minio and its' files. Default: 'minio'
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--group"></a>`group`
 
 Data type: `String`
 
 The group owning minio and its' files. Default: 'minio'
 
-##### <a name="home"></a>`home`
+##### <a name="-minio--home"></a>`home`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Qualified path to the users' home directory. Default: empty
 
-##### <a name="base_url"></a>`base_url`
+##### <a name="-minio--base_url"></a>`base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
 Download base URL for the server. Default: Github. Can be used for local mirrors.
 
-##### <a name="version"></a>`version`
+##### <a name="-minio--version"></a>`version`
 
 Data type: `String`
 
 Server release version to be installed.
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-minio--checksum"></a>`checksum`
 
 Data type: `String`
 
 Checksum for the server binary.
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-minio--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
 Type of checksum used to verify the server binary being installed. Default: `sha256`
 
-##### <a name="configuration_directory"></a>`configuration_directory`
+##### <a name="-minio--configuration_directory"></a>`configuration_directory`
 
 Data type: `Stdlib::Absolutepath`
 
 Directory holding Minio configuration file. Default: `/etc/minio`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
 Target directory to hold the minio installation. Default: `/opt/minio`
 
-##### <a name="storage_root"></a>`storage_root`
+##### <a name="-minio--storage_root"></a>`storage_root`
 
 Data type: `Variant[Stdlib::Absolutepath, Array[Stdlib::Absolutepath]]`
 
 Directory or directories where minio will keep all data. Default: `/var/minio`
 
-##### <a name="listen_ip"></a>`listen_ip`
+##### <a name="-minio--listen_ip"></a>`listen_ip`
 
 Data type: `Stdlib::IP::Address`
 
 IP address on which Minio should listen to requests.
 
-##### <a name="listen_port"></a>`listen_port`
+##### <a name="-minio--listen_port"></a>`listen_port`
 
 Data type: `Stdlib::Port`
 
 Port on which Minio should listen to requests.
 
-##### <a name="configuration"></a>`configuration`
+##### <a name="-minio--configuration"></a>`configuration`
 
 Data type: `Hash[String[1], Variant[String, Integer]]`
 
 Hash with environment settings for Minio.
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-minio--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
 Should we manage a server service definition for Minio? Default: `true`
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-minio--service_ensure"></a>`service_ensure`
 
 Data type: `Stdlib::Ensure::Service`
 
 Defines the state of the minio server service. Default: `running`
 
-##### <a name="service_template"></a>`service_template`
+##### <a name="-minio--service_template"></a>`service_template`
 
 Data type: `String`
 
 Path to the server service template file.
 
-##### <a name="service_provider"></a>`service_provider`
+##### <a name="-minio--service_provider"></a>`service_provider`
 
 Data type: `String`
 
 Which service provider do we use?
 
-##### <a name="manage_server_installation"></a>`manage_server_installation`
+##### <a name="-minio--manage_server_installation"></a>`manage_server_installation`
 
 Data type: `Boolean`
 
 Decides if puppet should manage the minio server installation.
 
-##### <a name="manage_client_installation"></a>`manage_client_installation`
+##### <a name="-minio--manage_client_installation"></a>`manage_client_installation`
 
 Data type: `Boolean`
 
 Decides if puppet should manage the minio client installation.
 
-##### <a name="client_package_ensure"></a>`client_package_ensure`
+##### <a name="-minio--client_package_ensure"></a>`client_package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
 Decides if the `mc` client binary will be installed. Default: `present`
 
-##### <a name="client_base_url"></a>`client_base_url`
+##### <a name="-minio--client_base_url"></a>`client_base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
 Download base URL for the minio client. Default: Github. Can be used for local mirrors.
 
-##### <a name="client_version"></a>`client_version`
+##### <a name="-minio--client_version"></a>`client_version`
 
 Data type: `String`
 
 Client release version to be installed.
 
-##### <a name="client_checksum"></a>`client_checksum`
+##### <a name="-minio--client_checksum"></a>`client_checksum`
 
 Data type: `String`
 
 Checksum for the client binary.
 
-##### <a name="client_checksum_type"></a>`client_checksum_type`
+##### <a name="-minio--client_checksum_type"></a>`client_checksum_type`
 
 Data type: `String`
 
 Type of checksum used to verify the client binary being installed. Default: `sha256`
 
-##### <a name="client_installation_directory"></a>`client_installation_directory`
+##### <a name="-minio--client_installation_directory"></a>`client_installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
 Target directory to hold the minio client installation. Default: `/opt/minioclient`
 
-##### <a name="client_binary_name"></a>`client_binary_name`
+##### <a name="-minio--client_binary_name"></a>`client_binary_name`
 
 Data type: `String`
 
 Target name of the minio client binary. Use this to avoid collisions with another `mc`.
 
-##### <a name="client_aliases"></a>`client_aliases`
+##### <a name="-minio--client_aliases"></a>`client_aliases`
 
 Data type: `Hash`
 
 List of aliases to add to the minio client configuration. For parameter description see `minio_client_alias`.
 
-##### <a name="purge_unmanaged_client_aliases"></a>`purge_unmanaged_client_aliases`
+##### <a name="-minio--purge_unmanaged_client_aliases"></a>`purge_unmanaged_client_aliases`
 
 Data type: `Boolean`
 
 Decides if puppet should purge unmanaged minio client aliases
 
-##### <a name="cert_ensure"></a>`cert_ensure`
+##### <a name="-minio--cert_ensure"></a>`cert_ensure`
 
 Data type: `Enum['present', 'absent']`
 
 Decides if minio certificates binary will be installed.
 
-##### <a name="cert_directory"></a>`cert_directory`
+##### <a name="-minio--cert_directory"></a>`cert_directory`
 
 Data type: `Stdlib::Absolutepath`
 
 Directory where minio will keep all cerfiticates.
 
-##### <a name="default_cert_name"></a>`default_cert_name`
+##### <a name="-minio--default_cert_name"></a>`default_cert_name`
 
 Data type: `Optional[String[1]]`
 
 Name of the default certificate. If no value provided, `miniodefault` is going
 to be used.
 
-##### <a name="default_cert_configuration"></a>`default_cert_configuration`
+##### <a name="-minio--default_cert_configuration"></a>`default_cert_configuration`
 
 Data type: `Optional[Hash]`
 
 Hash with the configuration for the default certificate. See `certs::site`
 of the `broadinstitute/certs` module for parameter descriptions.
 
-##### <a name="additional_certs"></a>`additional_certs`
+##### <a name="-minio--additional_certs"></a>`additional_certs`
 
 Data type: `Optional[Hash]`
 
@@ -354,13 +354,13 @@ a hash of certificate configuration. See `certs::site` of the `broadinstitute/ce
 module for parameter descriptions. **Important**: if you use additional certificates,
 their corresponding SAN names should be filled for SNI to work.
 
-##### <a name="custom_configuration_file_path"></a>`custom_configuration_file_path`
+##### <a name="-minio--custom_configuration_file_path"></a>`custom_configuration_file_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Optional custom location of the minio environment file.
 
-### <a name="minioclient"></a>`minio::client`
+### <a name="minio--client"></a>`minio::client`
 
 Manages a Minio client (mc) on various Linux/BSD operating systems.
 
@@ -396,18 +396,18 @@ class { 'minio::client':
 
 The following parameters are available in the `minio::client` class:
 
-* [`manage_client_installation`](#manage_client_installation)
-* [`package_ensure`](#package_ensure)
-* [`base_url`](#base_url)
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`installation_directory`](#installation_directory)
-* [`aliases`](#aliases)
-* [`purge_unmanaged_aliases`](#purge_unmanaged_aliases)
-* [`binary_name`](#binary_name)
+* [`manage_client_installation`](#-minio--client--manage_client_installation)
+* [`package_ensure`](#-minio--client--package_ensure)
+* [`base_url`](#-minio--client--base_url)
+* [`version`](#-minio--client--version)
+* [`checksum`](#-minio--client--checksum)
+* [`checksum_type`](#-minio--client--checksum_type)
+* [`installation_directory`](#-minio--client--installation_directory)
+* [`aliases`](#-minio--client--aliases)
+* [`purge_unmanaged_aliases`](#-minio--client--purge_unmanaged_aliases)
+* [`binary_name`](#-minio--client--binary_name)
 
-##### <a name="manage_client_installation"></a>`manage_client_installation`
+##### <a name="-minio--client--manage_client_installation"></a>`manage_client_installation`
 
 Data type: `Boolean`
 
@@ -415,7 +415,7 @@ Decides if puppet should manage the minio client installation.
 
 Default value: `$minio::manage_client_installation`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-minio--client--package_ensure"></a>`package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -423,7 +423,7 @@ Decides if the `mc` client binary will be installed. Default: `present`
 
 Default value: `$minio::client_package_ensure`
 
-##### <a name="base_url"></a>`base_url`
+##### <a name="-minio--client--base_url"></a>`base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
@@ -431,7 +431,7 @@ Download base URL for the minio client. Default: Github. Can be used for local m
 
 Default value: `$minio::client_base_url`
 
-##### <a name="version"></a>`version`
+##### <a name="-minio--client--version"></a>`version`
 
 Data type: `String`
 
@@ -439,7 +439,7 @@ Client release version to be installed.
 
 Default value: `$minio::client_version`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-minio--client--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -447,7 +447,7 @@ Checksum for the client binary.
 
 Default value: `$minio::client_checksum`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-minio--client--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -455,7 +455,7 @@ Type of checksum used to verify the client binary being installed. Default: `sha
 
 Default value: `$minio::client_checksum_type`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--client--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -463,7 +463,7 @@ Target directory to hold the minio client installation. Default: `/opt/minioclie
 
 Default value: `$minio::client_installation_directory`
 
-##### <a name="aliases"></a>`aliases`
+##### <a name="-minio--client--aliases"></a>`aliases`
 
 Data type: `Hash`
 
@@ -471,7 +471,7 @@ List of aliases to add to the minio client configuration. For parameter descript
 
 Default value: `$minio::client_aliases`
 
-##### <a name="purge_unmanaged_aliases"></a>`purge_unmanaged_aliases`
+##### <a name="-minio--client--purge_unmanaged_aliases"></a>`purge_unmanaged_aliases`
 
 Data type: `Boolean`
 
@@ -479,15 +479,15 @@ Decides if puppet should purge unmanaged minio client aliases
 
 Default value: `$minio::purge_unmanaged_client_aliases`
 
-##### <a name="binary_name"></a>`binary_name`
+##### <a name="-minio--client--binary_name"></a>`binary_name`
 
 Data type: `String`
 
-
+The name of the minio binary
 
 Default value: `$minio::client_binary_name`
 
-### <a name="minioclientconfig"></a>`minio::client::config`
+### <a name="minio--client--config"></a>`minio::client::config`
 
 Manages a Minio client (mc) configuration various Linux/BSD operating systems.
 
@@ -515,10 +515,10 @@ class { 'minio::client::config':
 
 The following parameters are available in the `minio::client::config` class:
 
-* [`aliases`](#aliases)
-* [`purge_unmanaged_aliases`](#purge_unmanaged_aliases)
+* [`aliases`](#-minio--client--config--aliases)
+* [`purge_unmanaged_aliases`](#-minio--client--config--purge_unmanaged_aliases)
 
-##### <a name="aliases"></a>`aliases`
+##### <a name="-minio--client--config--aliases"></a>`aliases`
 
 Data type: `Hash`
 
@@ -526,7 +526,7 @@ List of aliases to add to the minio client configuration. For parameter descript
 
 Default value: `$minio::client::aliases`
 
-##### <a name="purge_unmanaged_aliases"></a>`purge_unmanaged_aliases`
+##### <a name="-minio--client--config--purge_unmanaged_aliases"></a>`purge_unmanaged_aliases`
 
 Data type: `Boolean`
 
@@ -534,7 +534,7 @@ Decides if puppet should purge unmanaged minio client aliases
 
 Default value: `$minio::client::purge_unmanaged_aliases`
 
-### <a name="minioclientinstall"></a>`minio::client::install`
+### <a name="minio--client--install"></a>`minio::client::install`
 
 Manages a Minio client (mc) installation various Linux/BSD operating systems.
 
@@ -558,15 +558,15 @@ class { 'minio::client::install':
 
 The following parameters are available in the `minio::client::install` class:
 
-* [`package_ensure`](#package_ensure)
-* [`base_url`](#base_url)
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`installation_directory`](#installation_directory)
-* [`binary_name`](#binary_name)
+* [`package_ensure`](#-minio--client--install--package_ensure)
+* [`base_url`](#-minio--client--install--base_url)
+* [`version`](#-minio--client--install--version)
+* [`checksum`](#-minio--client--install--checksum)
+* [`checksum_type`](#-minio--client--install--checksum_type)
+* [`installation_directory`](#-minio--client--install--installation_directory)
+* [`binary_name`](#-minio--client--install--binary_name)
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-minio--client--install--package_ensure"></a>`package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -574,7 +574,7 @@ Decides if the `mc` client binary will be installed. Default: `present`
 
 Default value: `$minio::client::package_ensure`
 
-##### <a name="base_url"></a>`base_url`
+##### <a name="-minio--client--install--base_url"></a>`base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
@@ -582,7 +582,7 @@ Download base URL for the minio client. Default: Github. Can be used for local m
 
 Default value: `$minio::client::base_url`
 
-##### <a name="version"></a>`version`
+##### <a name="-minio--client--install--version"></a>`version`
 
 Data type: `String`
 
@@ -590,7 +590,7 @@ Client release version to be installed.
 
 Default value: `$minio::client::version`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-minio--client--install--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -598,7 +598,7 @@ Checksum for the client binary.
 
 Default value: `$minio::client::checksum`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-minio--client--install--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -606,7 +606,7 @@ Type of checksum used to verify the client binary being installed. Default: `sha
 
 Default value: `$minio::client::checksum_type`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--client--install--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -614,15 +614,15 @@ Target directory to hold the minio client installation. Default: `/opt/minioclie
 
 Default value: `$minio::client::installation_directory`
 
-##### <a name="binary_name"></a>`binary_name`
+##### <a name="-minio--client--install--binary_name"></a>`binary_name`
 
 Data type: `String`
 
-
+The name of the minio binary
 
 Default value: `$minio::client::binary_name`
 
-### <a name="minioserver"></a>`minio::server`
+### <a name="minio--server"></a>`minio::server`
 
 Copyright
 ---------
@@ -680,37 +680,36 @@ class { 'minio::server':
 
 The following parameters are available in the `minio::server` class:
 
-* [`manage_server_installation`](#manage_server_installation)
-* [`package_ensure`](#package_ensure)
-* [`manage_user`](#manage_user)
-* [`manage_group`](#manage_group)
-* [`manage_home`](#manage_home)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`base_url`](#base_url)
-* [`home`](#home)
-* [`base_url`](#base_url)
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`configuration_directory`](#configuration_directory)
-* [`installation_directory`](#installation_directory)
-* [`storage_root`](#storage_root)
-* [`listen_ip`](#listen_ip)
-* [`listen_port`](#listen_port)
-* [`configuration`](#configuration)
-* [`manage_service`](#manage_service)
-* [`service_ensure`](#service_ensure)
-* [`service_template`](#service_template)
-* [`service_provider`](#service_provider)
-* [`cert_ensure`](#cert_ensure)
-* [`cert_directory`](#cert_directory)
-* [`default_cert_name`](#default_cert_name)
-* [`default_cert_configuration`](#default_cert_configuration)
-* [`additional_certs`](#additional_certs)
-* [`custom_configuration_file_path`](#custom_configuration_file_path)
+* [`manage_server_installation`](#-minio--server--manage_server_installation)
+* [`package_ensure`](#-minio--server--package_ensure)
+* [`manage_user`](#-minio--server--manage_user)
+* [`manage_group`](#-minio--server--manage_group)
+* [`manage_home`](#-minio--server--manage_home)
+* [`owner`](#-minio--server--owner)
+* [`group`](#-minio--server--group)
+* [`home`](#-minio--server--home)
+* [`base_url`](#-minio--server--base_url)
+* [`version`](#-minio--server--version)
+* [`checksum`](#-minio--server--checksum)
+* [`checksum_type`](#-minio--server--checksum_type)
+* [`configuration_directory`](#-minio--server--configuration_directory)
+* [`installation_directory`](#-minio--server--installation_directory)
+* [`storage_root`](#-minio--server--storage_root)
+* [`listen_ip`](#-minio--server--listen_ip)
+* [`listen_port`](#-minio--server--listen_port)
+* [`configuration`](#-minio--server--configuration)
+* [`manage_service`](#-minio--server--manage_service)
+* [`service_ensure`](#-minio--server--service_ensure)
+* [`service_template`](#-minio--server--service_template)
+* [`service_provider`](#-minio--server--service_provider)
+* [`cert_ensure`](#-minio--server--cert_ensure)
+* [`cert_directory`](#-minio--server--cert_directory)
+* [`default_cert_name`](#-minio--server--default_cert_name)
+* [`default_cert_configuration`](#-minio--server--default_cert_configuration)
+* [`additional_certs`](#-minio--server--additional_certs)
+* [`custom_configuration_file_path`](#-minio--server--custom_configuration_file_path)
 
-##### <a name="manage_server_installation"></a>`manage_server_installation`
+##### <a name="-minio--server--manage_server_installation"></a>`manage_server_installation`
 
 Data type: `Boolean`
 
@@ -718,7 +717,7 @@ Decides if puppet should manage the minio server installation.
 
 Default value: `$minio::manage_server_installation`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-minio--server--package_ensure"></a>`package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -726,7 +725,7 @@ Decides if the `minio` binary will be installed. Default: `present`
 
 Default value: `$minio::package_ensure`
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-minio--server--manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
@@ -734,7 +733,7 @@ Should we manage provisioning the user? Default: `true`
 
 Default value: `$minio::manage_user`
 
-##### <a name="manage_group"></a>`manage_group`
+##### <a name="-minio--server--manage_group"></a>`manage_group`
 
 Data type: `Boolean`
 
@@ -742,7 +741,7 @@ Should we manage provisioning the group? Default: `true`
 
 Default value: `$minio::manage_group`
 
-##### <a name="manage_home"></a>`manage_home`
+##### <a name="-minio--server--manage_home"></a>`manage_home`
 
 Data type: `Boolean`
 
@@ -750,7 +749,7 @@ Should we manage provisioning the home directory? Default: `true`
 
 Default value: `$minio::manage_home`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--server--owner"></a>`owner`
 
 Data type: `String`
 
@@ -758,7 +757,7 @@ The user owning minio and its' files. Default: 'minio'
 
 Default value: `$minio::owner`
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--server--group"></a>`group`
 
 Data type: `String`
 
@@ -766,15 +765,7 @@ The group owning minio and its' files. Default: 'minio'
 
 Default value: `$minio::group`
 
-##### <a name="base_url"></a>`base_url`
-
-Data type: `Stdlib::HTTPUrl`
-
-Download base URL for the server. Can be used for local mirrors.
-
-Default value: `$minio::base_url`
-
-##### <a name="home"></a>`home`
+##### <a name="-minio--server--home"></a>`home`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
@@ -782,7 +773,7 @@ Qualified path to the users' home directory. Default: empty
 
 Default value: `$minio::home`
 
-##### <a name="base_url"></a>`base_url`
+##### <a name="-minio--server--base_url"></a>`base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
@@ -790,7 +781,7 @@ Download base URL for the server. Default: Github. Can be used for local mirrors
 
 Default value: `$minio::base_url`
 
-##### <a name="version"></a>`version`
+##### <a name="-minio--server--version"></a>`version`
 
 Data type: `String`
 
@@ -798,7 +789,7 @@ Release version to be installed.
 
 Default value: `$minio::version`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-minio--server--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -806,7 +797,7 @@ Checksum for the binary.
 
 Default value: `$minio::checksum`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-minio--server--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -814,7 +805,7 @@ Type of checksum used to verify the binary being installed. Default: `sha256`
 
 Default value: `$minio::checksum_type`
 
-##### <a name="configuration_directory"></a>`configuration_directory`
+##### <a name="-minio--server--configuration_directory"></a>`configuration_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -822,7 +813,7 @@ Directory holding Minio configuration file. Default: `/etc/minio`
 
 Default value: `$minio::configuration_directory`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--server--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -830,7 +821,7 @@ Target directory to hold the minio installation. Default: `/opt/minio`
 
 Default value: `$minio::installation_directory`
 
-##### <a name="storage_root"></a>`storage_root`
+##### <a name="-minio--server--storage_root"></a>`storage_root`
 
 Data type: `Variant[Stdlib::Absolutepath, Array[Stdlib::Absolutepath]]`
 
@@ -838,7 +829,7 @@ Directory or directories where minio will keep all data. Default: `/var/minio`
 
 Default value: `$minio::storage_root`
 
-##### <a name="listen_ip"></a>`listen_ip`
+##### <a name="-minio--server--listen_ip"></a>`listen_ip`
 
 Data type: `Stdlib::IP::Address`
 
@@ -846,7 +837,7 @@ IP address on which Minio should listen to requests.
 
 Default value: `$minio::listen_ip`
 
-##### <a name="listen_port"></a>`listen_port`
+##### <a name="-minio--server--listen_port"></a>`listen_port`
 
 Data type: `Stdlib::Port`
 
@@ -854,7 +845,7 @@ Port on which Minio should listen to requests.
 
 Default value: `$minio::listen_port`
 
-##### <a name="configuration"></a>`configuration`
+##### <a name="-minio--server--configuration"></a>`configuration`
 
 Data type: `Hash[String[1], Variant[String, Integer]]`
 
@@ -862,7 +853,7 @@ Hash with environment settings for Minio.
 
 Default value: `$minio::configuration`
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-minio--server--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
@@ -870,7 +861,7 @@ Should we manage a server service definition for Minio? Default: `true`
 
 Default value: `$minio::manage_service`
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-minio--server--service_ensure"></a>`service_ensure`
 
 Data type: `Stdlib::Ensure::Service`
 
@@ -878,7 +869,7 @@ Defines the state of the minio server service. Default: `running`
 
 Default value: `$minio::service_ensure`
 
-##### <a name="service_template"></a>`service_template`
+##### <a name="-minio--server--service_template"></a>`service_template`
 
 Data type: `String`
 
@@ -886,7 +877,7 @@ Path to the server service template file.
 
 Default value: `$minio::service_template`
 
-##### <a name="service_provider"></a>`service_provider`
+##### <a name="-minio--server--service_provider"></a>`service_provider`
 
 Data type: `String`
 
@@ -894,7 +885,7 @@ Which service provider do we use?
 
 Default value: `$minio::service_provider`
 
-##### <a name="cert_ensure"></a>`cert_ensure`
+##### <a name="-minio--server--cert_ensure"></a>`cert_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -902,7 +893,7 @@ Decides if minio certificates binary will be installed.
 
 Default value: `$minio::cert_ensure`
 
-##### <a name="cert_directory"></a>`cert_directory`
+##### <a name="-minio--server--cert_directory"></a>`cert_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -910,7 +901,7 @@ Directory where minio will keep all cerfiticates.
 
 Default value: `$minio::cert_directory`
 
-##### <a name="default_cert_name"></a>`default_cert_name`
+##### <a name="-minio--server--default_cert_name"></a>`default_cert_name`
 
 Data type: `Optional[String[1]]`
 
@@ -919,7 +910,7 @@ to be used.
 
 Default value: `$minio::default_cert_name`
 
-##### <a name="default_cert_configuration"></a>`default_cert_configuration`
+##### <a name="-minio--server--default_cert_configuration"></a>`default_cert_configuration`
 
 Data type: `Optional[Hash]`
 
@@ -928,7 +919,7 @@ of the `broadinstitute/certs` module for parameter descriptions.
 
 Default value: `$minio::default_cert_configuration`
 
-##### <a name="additional_certs"></a>`additional_certs`
+##### <a name="-minio--server--additional_certs"></a>`additional_certs`
 
 Data type: `Optional[Hash]`
 
@@ -939,7 +930,7 @@ their corresponding SAN names should be filled for SNI to work.
 
 Default value: `$minio::additional_certs`
 
-##### <a name="custom_configuration_file_path"></a>`custom_configuration_file_path`
+##### <a name="-minio--server--custom_configuration_file_path"></a>`custom_configuration_file_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
@@ -947,7 +938,7 @@ Optional custom location of the minio environment file.
 
 Default value: `$minio::custom_configuration_file_path`
 
-### <a name="minioservercerts"></a>`minio::server::certs`
+### <a name="minio--server--certs"></a>`minio::server::certs`
 
 Manages minio certificate deployment.
 
@@ -982,15 +973,15 @@ class {'minio::server::certs':
 
 The following parameters are available in the `minio::server::certs` class:
 
-* [`cert_ensure`](#cert_ensure)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`cert_directory`](#cert_directory)
-* [`default_cert_name`](#default_cert_name)
-* [`default_cert_configuration`](#default_cert_configuration)
-* [`additional_certs`](#additional_certs)
+* [`cert_ensure`](#-minio--server--certs--cert_ensure)
+* [`owner`](#-minio--server--certs--owner)
+* [`group`](#-minio--server--certs--group)
+* [`cert_directory`](#-minio--server--certs--cert_directory)
+* [`default_cert_name`](#-minio--server--certs--default_cert_name)
+* [`default_cert_configuration`](#-minio--server--certs--default_cert_configuration)
+* [`additional_certs`](#-minio--server--certs--additional_certs)
 
-##### <a name="cert_ensure"></a>`cert_ensure`
+##### <a name="-minio--server--certs--cert_ensure"></a>`cert_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -998,7 +989,7 @@ Decides if minio certificates binary will be installed.
 
 Default value: `$minio::server::cert_ensure`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--server--certs--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1006,7 +997,7 @@ The user owning minio cerfificates.
 
 Default value: `$minio::server::owner`
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--server--certs--group"></a>`group`
 
 Data type: `String`
 
@@ -1014,7 +1005,7 @@ The group owning minio certificates.
 
 Default value: `$minio::server::group`
 
-##### <a name="cert_directory"></a>`cert_directory`
+##### <a name="-minio--server--certs--cert_directory"></a>`cert_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1022,7 +1013,7 @@ Directory where minio will keep all cerfiticates.
 
 Default value: `$minio::server::cert_directory`
 
-##### <a name="default_cert_name"></a>`default_cert_name`
+##### <a name="-minio--server--certs--default_cert_name"></a>`default_cert_name`
 
 Data type: `Optional[String[1]]`
 
@@ -1031,7 +1022,7 @@ to be used.
 
 Default value: `$minio::server::default_cert_name`
 
-##### <a name="default_cert_configuration"></a>`default_cert_configuration`
+##### <a name="-minio--server--certs--default_cert_configuration"></a>`default_cert_configuration`
 
 Data type: `Optional[Hash]`
 
@@ -1040,7 +1031,7 @@ of the `broadinstitute/certs` module for parameter descriptions.
 
 Default value: `$minio::server::default_cert_configuration`
 
-##### <a name="additional_certs"></a>`additional_certs`
+##### <a name="-minio--server--certs--additional_certs"></a>`additional_certs`
 
 Data type: `Optional[Hash]`
 
@@ -1051,7 +1042,7 @@ their corresponding SAN names should be filled for SNI to work.
 
 Default value: `$minio::server::additional_certs`
 
-### <a name="minioserverconfig"></a>`minio::server::config`
+### <a name="minio--server--config"></a>`minio::server::config`
 
 Copyright
 ---------
@@ -1082,15 +1073,15 @@ class { 'minio::server::config':
 
 The following parameters are available in the `minio::server::config` class:
 
-* [`owner`](#owner)
-* [`group`](#group)
-* [`configuration_directory`](#configuration_directory)
-* [`installation_directory`](#installation_directory)
-* [`storage_root`](#storage_root)
-* [`configuration`](#configuration)
-* [`custom_configuration_file_path`](#custom_configuration_file_path)
+* [`owner`](#-minio--server--config--owner)
+* [`group`](#-minio--server--config--group)
+* [`configuration_directory`](#-minio--server--config--configuration_directory)
+* [`installation_directory`](#-minio--server--config--installation_directory)
+* [`storage_root`](#-minio--server--config--storage_root)
+* [`configuration`](#-minio--server--config--configuration)
+* [`custom_configuration_file_path`](#-minio--server--config--custom_configuration_file_path)
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--server--config--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1098,7 +1089,7 @@ The user owning minio and its' files.
 
 Default value: `$minio::server::owner`
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--server--config--group"></a>`group`
 
 Data type: `String`
 
@@ -1106,7 +1097,7 @@ The group owning minio and its' files.
 
 Default value: `$minio::server::group`
 
-##### <a name="configuration_directory"></a>`configuration_directory`
+##### <a name="-minio--server--config--configuration_directory"></a>`configuration_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1114,7 +1105,7 @@ Directory holding Minio configuration file./minio`
 
 Default value: `$minio::server::configuration_directory`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--server--config--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1122,7 +1113,7 @@ Target directory to hold the minio installation./minio`
 
 Default value: `$minio::server::installation_directory`
 
-##### <a name="storage_root"></a>`storage_root`
+##### <a name="-minio--server--config--storage_root"></a>`storage_root`
 
 Data type: `Variant[Stdlib::Absolutepath, Array[Stdlib::Absolutepath]]`
 
@@ -1130,7 +1121,7 @@ Directory or directories where minio will keep all data.
 
 Default value: `$minio::server::storage_root`
 
-##### <a name="configuration"></a>`configuration`
+##### <a name="-minio--server--config--configuration"></a>`configuration`
 
 Data type: `Hash[String[1], Variant[String, Integer]]`
 
@@ -1138,7 +1129,7 @@ Hash with environment settings for Minio.
 
 Default value: `$minio::server::configuration`
 
-##### <a name="custom_configuration_file_path"></a>`custom_configuration_file_path`
+##### <a name="-minio--server--config--custom_configuration_file_path"></a>`custom_configuration_file_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
@@ -1146,7 +1137,7 @@ Optional custom location of the minio environment file.
 
 Default value: `$minio::server::custom_configuration_file_path`
 
-### <a name="minioserverinstall"></a>`minio::server::install`
+### <a name="minio--server--install"></a>`minio::server::install`
 
 Copyright
 ---------
@@ -1183,25 +1174,25 @@ class { 'minio::server::install':
 
 The following parameters are available in the `minio::server::install` class:
 
-* [`package_ensure`](#package_ensure)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`base_url`](#base_url)
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`configuration_directory`](#configuration_directory)
-* [`installation_directory`](#installation_directory)
-* [`storage_root`](#storage_root)
-* [`listen_ip`](#listen_ip)
-* [`listen_port`](#listen_port)
-* [`manage_service`](#manage_service)
-* [`service_template`](#service_template)
-* [`service_provider`](#service_provider)
-* [`cert_directory`](#cert_directory)
-* [`custom_configuration_file_path`](#custom_configuration_file_path)
+* [`package_ensure`](#-minio--server--install--package_ensure)
+* [`owner`](#-minio--server--install--owner)
+* [`group`](#-minio--server--install--group)
+* [`base_url`](#-minio--server--install--base_url)
+* [`version`](#-minio--server--install--version)
+* [`checksum`](#-minio--server--install--checksum)
+* [`checksum_type`](#-minio--server--install--checksum_type)
+* [`configuration_directory`](#-minio--server--install--configuration_directory)
+* [`installation_directory`](#-minio--server--install--installation_directory)
+* [`storage_root`](#-minio--server--install--storage_root)
+* [`listen_ip`](#-minio--server--install--listen_ip)
+* [`listen_port`](#-minio--server--install--listen_port)
+* [`manage_service`](#-minio--server--install--manage_service)
+* [`service_template`](#-minio--server--install--service_template)
+* [`service_provider`](#-minio--server--install--service_provider)
+* [`cert_directory`](#-minio--server--install--cert_directory)
+* [`custom_configuration_file_path`](#-minio--server--install--custom_configuration_file_path)
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-minio--server--install--package_ensure"></a>`package_ensure`
 
 Data type: `Enum['present', 'absent']`
 
@@ -1209,7 +1200,7 @@ Decides if the `minio` binary will be installed.
 
 Default value: `$minio::server::package_ensure`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--server--install--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1217,7 +1208,7 @@ The user owning minio and its' files.
 
 Default value: `$minio::server::owner`
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--server--install--group"></a>`group`
 
 Data type: `String`
 
@@ -1225,7 +1216,7 @@ The group owning minio and its' files.
 
 Default value: `$minio::server::group`
 
-##### <a name="base_url"></a>`base_url`
+##### <a name="-minio--server--install--base_url"></a>`base_url`
 
 Data type: `Stdlib::HTTPUrl`
 
@@ -1233,7 +1224,7 @@ Download base URL for the server. Can be used for local mirrors.
 
 Default value: `$minio::server::base_url`
 
-##### <a name="version"></a>`version`
+##### <a name="-minio--server--install--version"></a>`version`
 
 Data type: `String`
 
@@ -1241,7 +1232,7 @@ Release version to be installed.
 
 Default value: `$minio::server::version`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-minio--server--install--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -1249,7 +1240,7 @@ Checksum for the binary.
 
 Default value: `$minio::server::checksum`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-minio--server--install--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -1257,7 +1248,7 @@ Type of checksum used to verify the binary being installed.
 
 Default value: `$minio::server::checksum_type`
 
-##### <a name="configuration_directory"></a>`configuration_directory`
+##### <a name="-minio--server--install--configuration_directory"></a>`configuration_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1265,7 +1256,7 @@ Directory holding Minio configuration file./minio`
 
 Default value: `$minio::server::configuration_directory`
 
-##### <a name="installation_directory"></a>`installation_directory`
+##### <a name="-minio--server--install--installation_directory"></a>`installation_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1273,7 +1264,7 @@ Target directory to hold the minio installation./minio`
 
 Default value: `$minio::server::installation_directory`
 
-##### <a name="storage_root"></a>`storage_root`
+##### <a name="-minio--server--install--storage_root"></a>`storage_root`
 
 Data type: `Variant[Stdlib::Absolutepath, Array[Stdlib::Absolutepath]]`
 
@@ -1281,7 +1272,7 @@ Directory or directories where minio will keep all data.
 
 Default value: `$minio::server::storage_root`
 
-##### <a name="listen_ip"></a>`listen_ip`
+##### <a name="-minio--server--install--listen_ip"></a>`listen_ip`
 
 Data type: `Stdlib::IP::Address`
 
@@ -1289,7 +1280,7 @@ IP address on which Minio should listen to requests.
 
 Default value: `$minio::server::listen_ip`
 
-##### <a name="listen_port"></a>`listen_port`
+##### <a name="-minio--server--install--listen_port"></a>`listen_port`
 
 Data type: `Stdlib::Port`
 
@@ -1297,7 +1288,7 @@ Port on which Minio should listen to requests.
 
 Default value: `$minio::server::listen_port`
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-minio--server--install--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
@@ -1305,7 +1296,7 @@ Should we manage a server service definition for Minio?
 
 Default value: `$minio::server::manage_service`
 
-##### <a name="service_template"></a>`service_template`
+##### <a name="-minio--server--install--service_template"></a>`service_template`
 
 Data type: `String`
 
@@ -1313,7 +1304,7 @@ Path to the server service template file.
 
 Default value: `$minio::server::service_template`
 
-##### <a name="service_provider"></a>`service_provider`
+##### <a name="-minio--server--install--service_provider"></a>`service_provider`
 
 Data type: `String`
 
@@ -1321,7 +1312,7 @@ Which service provider do we use?
 
 Default value: `$minio::server::service_provider`
 
-##### <a name="cert_directory"></a>`cert_directory`
+##### <a name="-minio--server--install--cert_directory"></a>`cert_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -1329,7 +1320,7 @@ Directory where minio will keep all cerfiticates.
 
 Default value: `$minio::server::cert_directory`
 
-##### <a name="custom_configuration_file_path"></a>`custom_configuration_file_path`
+##### <a name="-minio--server--install--custom_configuration_file_path"></a>`custom_configuration_file_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
@@ -1337,7 +1328,7 @@ Optional custom location of the minio environment file.
 
 Default value: `$minio::server::custom_configuration_file_path`
 
-### <a name="minioserverservice"></a>`minio::server::service`
+### <a name="minio--server--service"></a>`minio::server::service`
 
 Copyright
 ---------
@@ -1360,11 +1351,11 @@ class { 'minio::server::service':
 
 The following parameters are available in the `minio::server::service` class:
 
-* [`manage_service`](#manage_service)
-* [`service_ensure`](#service_ensure)
-* [`service_provider`](#service_provider)
+* [`manage_service`](#-minio--server--service--manage_service)
+* [`service_ensure`](#-minio--server--service--service_ensure)
+* [`service_provider`](#-minio--server--service--service_provider)
 
-##### <a name="manage_service"></a>`manage_service`
+##### <a name="-minio--server--service--manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
@@ -1372,7 +1363,7 @@ Should we manage a server service definition for Minio?
 
 Default value: `$minio::server::manage_service`
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-minio--server--service--service_ensure"></a>`service_ensure`
 
 Data type: `Stdlib::Ensure::Service`
 
@@ -1380,7 +1371,7 @@ Defines the state of the minio server service.
 
 Default value: `$minio::server::service_ensure`
 
-##### <a name="service_provider"></a>`service_provider`
+##### <a name="-minio--server--service--service_provider"></a>`service_provider`
 
 Data type: `String`
 
@@ -1388,7 +1379,7 @@ Which service provider do we use?
 
 Default value: `$minio::server::service_provider`
 
-### <a name="minioserveruser"></a>`minio::server::user`
+### <a name="minio--server--user"></a>`minio::server::user`
 
 Copyright
 ---------
@@ -1414,14 +1405,14 @@ class {'minio::server::user':
 
 The following parameters are available in the `minio::server::user` class:
 
-* [`manage_user`](#manage_user)
-* [`manage_group`](#manage_group)
-* [`manage_home`](#manage_home)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`home`](#home)
+* [`manage_user`](#-minio--server--user--manage_user)
+* [`manage_group`](#-minio--server--user--manage_group)
+* [`manage_home`](#-minio--server--user--manage_home)
+* [`owner`](#-minio--server--user--owner)
+* [`group`](#-minio--server--user--group)
+* [`home`](#-minio--server--user--home)
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-minio--server--user--manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
@@ -1429,7 +1420,7 @@ Should we manage provisioning the user?
 
 Default value: `$minio::server::manage_user`
 
-##### <a name="manage_group"></a>`manage_group`
+##### <a name="-minio--server--user--manage_group"></a>`manage_group`
 
 Data type: `Boolean`
 
@@ -1437,7 +1428,7 @@ Should we manage provisioning the group?
 
 Default value: `$minio::server::manage_group`
 
-##### <a name="manage_home"></a>`manage_home`
+##### <a name="-minio--server--user--manage_home"></a>`manage_home`
 
 Data type: `Boolean`
 
@@ -1445,7 +1436,7 @@ Should we manage provisioning the home directory?
 
 Default value: `$minio::server::manage_home`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-minio--server--user--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1453,7 +1444,7 @@ The user owning minio and its' files.
 
 Default value: `$minio::server::owner`
 
-##### <a name="group"></a>`group`
+##### <a name="-minio--server--user--group"></a>`group`
 
 Data type: `String`
 
@@ -1461,7 +1452,7 @@ The group owning minio and its' files.
 
 Default value: `$minio::server::group`
 
-##### <a name="home"></a>`home`
+##### <a name="-minio--server--user--home"></a>`home`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
@@ -1548,9 +1539,9 @@ The API access secret
 
 The following parameters are available in the `minio_client_alias` type.
 
-* [`name`](#name)
+* [`name`](#-minio_client_alias--name)
 
-##### <a name="name"></a>`name`
+##### <a name="-minio_client_alias--name"></a>`name`
 
 namevar
 
