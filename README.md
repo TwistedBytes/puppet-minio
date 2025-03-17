@@ -220,3 +220,9 @@ test cases and syntax checks pass.
 [forge-shield]: https://img.shields.io/puppetforge/v/kogitoapp/minio.svg
 [forge-shield-dl]: https://img.shields.io/puppetforge/dt/kogitoapp/minio.svg
 [forge-shield-sc]: https://img.shields.io/puppetforge/f/kogitoapp/minio.svg
+
+## Transfer NOTICE
+
+This Plugin was originally authored by [Kogito UG ](https://github.com/kogitoapp)
+
+Previously: [kogito-ops/puppet-minio: A Puppet module to manage the Min.io S3 Server.](https://github.com/kogito-ops/puppet-minio)
