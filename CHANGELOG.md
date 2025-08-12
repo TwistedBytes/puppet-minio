@@ -2,14 +2,42 @@
 
 All notable changes to this project will be documented in this file.
 
-## Release X.X.X (2021-04-08)
+## Release 1.1.4 (2021-09-23)
 
+**Features**
 
+- Changed module metadata to allow 3.x versions of camptocamp/systemd
 
-- Upgrade default Minio installation to a more recent version
-- disable /etc/minio config
-- add mc installation
-- Use Systemd EnvironmentFile for config or root user/pass
+## Release 1.1.3 (2021-09-14)
+
+**Features**
+
+- Changed to 3.0.0 release of `broadinstitute/certs`
+
+**Documentation**
+
+- Changed deprecated env parameters to recommended ones
+
+## Release 1.1.2 (2021-09-10)
+
+**Features**
+
+- Changed `storage_root` to acccept both string and array of strings to support
+  erasure coding
+- Added support for custom deployment definitions with `MINIO_DEPLOYMENT_DEFINITION`
+  to support erasure coding and distributed deployments
+
+## Release 1.1.1 (2021-09-08)
+
+**Features**
+
+- Moved existing profiles to `server` namespace
+- Added support for minio client deployments
+- Added support for client alias management
+- Added support for certificate deployments
+- Added support for custom locations for the configuration file
+- Added support for providing additional options for minio server with `MINIO_OPTS`
+- Updated documentation
 
 ## Release 1.1.0 (2017-11-15)
 
