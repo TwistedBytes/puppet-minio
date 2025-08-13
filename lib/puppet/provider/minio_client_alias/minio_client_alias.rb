@@ -2,7 +2,7 @@
 
 require 'json'
 require 'puppet/resource_api/simple_provider'
-require_relative '../..puppet_x/minio/client'
+require 'puppet_x/minio/client'
 
 LEGACY_PATH_SUPPORT_MAP ||= {
   '': 'auto',
